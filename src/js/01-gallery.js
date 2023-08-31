@@ -37,10 +37,10 @@ const onImgClick = event => {
     <img src="${currentImg}" width="800" height="600">
    `)
 
-    
     document.addEventListener('keydown', closeEsc);
 
-
+    document.removeEventListener('keydown', closeEsc);
+    
     instance.show()
 
     
@@ -48,10 +48,8 @@ const onImgClick = event => {
 
 refs.galleryEl.addEventListener('click', onImgClick);
 
-const closeEsc = event => {
-    
-    if (event.code === 'Escape') {
-        document.removeEventListener('keydown', closeEsc);
+function closeEsc (event) {
+        if (event.key === 'Escape') {
         instance.close();
     }
     
