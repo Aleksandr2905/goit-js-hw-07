@@ -33,7 +33,7 @@ const onImgClick = event => {
     }
     const currentImg = event.target.dataset.source;
 
-    instance = basicLightbox.create(`
+    const instance = basicLightbox.create(`
     <img src="${currentImg}" width="800" height="600">
    `)
 
