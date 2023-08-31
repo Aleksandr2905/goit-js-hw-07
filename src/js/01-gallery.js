@@ -31,15 +31,16 @@ const onImgClick = event => {
     if (event.target.nodeName !== "IMG") {
         return;
     }
+    const currentImg = event.target.dataset.source;
+
+   const instance = basicLightbox.create(`
+    <img src="${currentImg}" width="800" height="600">
+   `)
+
+ instance.show()
 } 
 
 refs.galleryEl.addEventListener('click', onImgClick);
 
 
-
-const instance = basicLightbox.create(`
-    <img src="assets/images/image.png" width="800" height="600">
-`)
-
-instance.show()
 
